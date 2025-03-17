@@ -1,0 +1,4 @@
+# Ignore final built site
+public/
+_gen/
+.hugo_build.lock
