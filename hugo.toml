@@ -5,7 +5,7 @@ copyright = "Edward Li"
 theme = 'hydra-devel'
 
 [[menu.main]]
-name = "Home"
+name = "Blogs"
 url = "/"
 weight = 1
 
@@ -20,8 +20,8 @@ url = "/tags"
 weight = 3
 
 [[menu.main]]
-name = "About"
-url = "/about"
+name = "Home"
+url = "https://edward-li.com/"
 weight = 4
 
 [params]
