@@ -37,8 +37,8 @@ and foster communities at [Atelier](https://www.instagram.com/atelier.ubc/)/[Soc
 
 This blog serves as a collection of my thoughts, projects, and experiences over the years. Feel free to explore!"""
 mainSectionTitle = "Blog Posts"
-mainSections = []
-displayCategories = []
+mainSections = ["meta"]
+displayCategories = ["meta"]
 showAllPostsArchive = true
 showAllPostsOnHomePage = true
 enableBlogCategoryHeaders = true
