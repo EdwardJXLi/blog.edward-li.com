@@ -1,5 +1,5 @@
 # Use the official Hugo image as a builder
-FROM klakegg/hugo:0.121.1-alpine AS builder
+FROM hugomods/hugo:base AS builder
 
 # Set working directory
 WORKDIR /src
