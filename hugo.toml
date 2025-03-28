@@ -2,7 +2,7 @@ baseURL = 'https://blog.edward-li.com/'
 languageCode = 'en-us'
 title = "Edward Li's Blog"
 copyright = "Edward Li"
-theme = 'hydra-devel'
+theme = 'hydra'
 
 [[menu.main]]
 name = "Blogs"

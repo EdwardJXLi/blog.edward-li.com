@@ -1,0 +1,3 @@
+[submodule "themes/hydra"]
+	path = themes/hydra
+	url = https://github.com/EdwardJXLi/hugo-theme-hydra.git
