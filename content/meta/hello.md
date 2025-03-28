@@ -5,10 +5,10 @@ keywords:
   - Introduction
 ---
 
-### Hello internet traveller.
+### Hello, Internet Traveller
 
-Welcome to my blog! I hope this can serve as a home for some of my projects, experiences, technical explorations, the things I find cool, or simply random scattered thoughts. With the speed and ease of information  in today's world from technologies like Google or AI, I believe it is valuable to slow down, relax, and have a corner of the internet where I can just talk and yap about the stuff I find interesting.
+Welcome to my blog! I hope this space serves as a home for some of my projects, experiences, technical explorations, or simply random scattered thoughts that spark my interest. In a world where information is just a Google search or a ChatGPT query away, I believe it's important to slow down, relax, and create a corner of the internet where I can just chat about the stuff I find interesting.
 
-I think that at the end of the day, as humans, we are storytellers. We want others to learn, explore, and grow from our adventures (and also mis-adventures). So sit down, relax, and follow me as I document my past, present, and future journeys - and I hope throughout all this, you enjoy these as much as I do writing them.
+At the end of the day, as humans, we are storytellers. We want others to learn, explore, and grow from our adventures (and our misadventures, too). So sit back, relax, and follow me as I document my past, present, and future journeys—and I hope throughout all this, you enjoy these as much as I do writing them.
 
-Feel free to contact me anytime with questions, or if you just want to talk! Links out on the [home page](/).
+Feel free to reach out with questions or just to say hello! You can find links on the [home page](/).
