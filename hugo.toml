@@ -26,7 +26,7 @@ weight = 4
 
 [params]
 colortheme = "white"
-logo = "static/images/logo.png"
+logo = "images/logo.png"
 description = """I'm Edward Li, a Computer Science and Physics student at the [University of British Columbia](https://www.ubc.ca)! 
 Currently, I live in San Francisco building software agents at [Codegen](https://codegen.com/).
 
@@ -51,7 +51,3 @@ plausibleURL = "https://a.dragondragondragon.xyz/main.js"
 [services]
   [services.googleAnalytics]
     ID = 'G-BJ8JV88MMC'
-
-[[module.mounts]]
-source = 'static'
-target = 'static/static'
