@@ -44,6 +44,10 @@ showAllPostsOnHomePage = true
 enableBlogCategoryHeaders = true
 themeFooter = true
 
+[services]
+  [services.googleAnalytics]
+    ID = 'G-BJ8JV88MMC'
+
 [[module.mounts]]
 source = 'static'
 target = 'static/static'
