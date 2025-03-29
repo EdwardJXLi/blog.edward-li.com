@@ -44,6 +44,10 @@ showAllPostsOnHomePage = true
 enableBlogCategoryHeaders = true
 themeFooter = true
 
+plausibleDomain = "blog.edward-li.com"
+plausibleDataAPI = "https://a.dragondragondragon.xyz/api/event"
+plausibleURL = "https://a.dragondragondragon.xyz/main.js"
+
 [services]
   [services.googleAnalytics]
     ID = 'G-BJ8JV88MMC'
