@@ -8,7 +8,7 @@ WORKDIR /src
 COPY . .
 
 # Build the site
-RUN hugo --minify
+RUN hugo
 
 # Use Nginx for serving the static site
 FROM nginx:alpine
