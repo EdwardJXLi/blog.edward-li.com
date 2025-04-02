@@ -48,6 +48,34 @@ plausibleDomain = "blog.edward-li.com"
 plausibleDataAPI = "https://a.dragondragondragon.xyz/api/event"
 plausibleURL = "https://a.dragondragondragon.xyz/main.js"
 
+[[params.social]]
+  name = "github"
+  link = "https://github.com/edwardjxli"
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/edwardjxli"
+
+[[params.social]]
+  name = "x-twitter"
+  link = "https://x.com/edwardjxli"
+
+[[params.social]]
+  name = "bluesky"
+  link = "https://bsky.app/profile/edward-li.com"
+
+[[params.social]]
+  name = "instagram"
+  link = "https://www.instagram.com/edwardjxli"
+
+[[params.social]]
+  name = "discord"
+  link = "https://discord.gg/9QF2bPc"
+
+[[params.social]]
+  name = "email"
+  link = "blog@edward-li.com"
+
 [services]
   [services.googleAnalytics]
     ID = 'G-BJ8JV88MMC'
