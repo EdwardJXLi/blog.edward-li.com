@@ -5,3 +5,6 @@ _gen/
 
 # Ignore development theme
 hydra-devel
+
+# Ignore obsidian data
+.obsidian
