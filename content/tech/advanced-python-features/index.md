@@ -5,7 +5,7 @@ keywords:
 tags:
   - python
 ---
-Python is one of the [most widely adopted programming languages](https://survey.stackoverflow.co/2024/technology#most-popular-technologies) in the world. Yet, because of it's ease and simplicity to just "get *something* working", it's also one of the most misunderstood.
+Python is one of the [most widely adopted programming languages](https://survey.stackoverflow.co/2024/technology#most-popular-technologies) in the world. Yet, because of it's ease and simplicity to just "get *something* working", it's also one of the most underappreciated.
 
 If you search for [`Top 10 Advanced Python Tricks`](https://www.google.com/search?q=Top+10+Advanced+Python+Tricks) on Google or any other search engine, you'll find tons of blogs or LinkedIn articles going over trivial (but still useful) things like `generators` or `tuples`.
 
