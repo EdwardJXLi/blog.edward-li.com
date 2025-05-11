@@ -15,7 +15,7 @@ That's why I decided to compile the top 14 of said features alongside examples a
 
 > These tips & tricks were originally featured as part of a 14-day series on X/Twitter between March 1st and March 14th (pi-day, hence why there are 14 topics in the article).
 >
-> All X/Twitter links will also be accompanied with a Nitter counterpart. Nitter is a privacy-abiding open source Twitter frontend. Learn more about the project [here](https://github.com/zedeus/nitter).
+> All X/Twitter links will also be accompanied with a Nitter mirror. Nitter is a privacy-abiding open source Twitter frontend. Learn more about the project [here](https://github.com/zedeus/nitter).
 
 # Table of Contents
 - [1. Typing Overloads](#1-typing-overloads)
@@ -39,6 +39,8 @@ That's why I decided to compile the top 14 of said features alongside examples a
 > **[Original X/Twitter Thread](https://x.com/edwardjxli/status/1895937864527192320)  |  [Nitter Mirror](https://nitter.hydranet.dev/edwardjxli/status/1895937864527192320)**
 
 **`@overload`** is a decorator from Python's `typing` module that lets you define multiple signatures for the same function. Each overload tells the type checker exactly what types to expect when specific parameters are passed in.
+
+> Note that Python's `@overload` works differently than some other languages. In Python, `@overload` tells the type checker to *expect different signatures* for the same function. It doesn't actually define multiple versions of the function itself, unlike Java or C++.
 
 For example, the code below dictates that *only* `list[str]` can be returned if `mode=split`, and *only* `str` can be returned if `mode=upper`. (The `Literal` type also forces mode to be either one of `split` or `upper`)
 
@@ -362,6 +364,18 @@ Vector: TypeAlias = list[float]
 type Vector = list[float]
 ```
 
+> It's important to note that `NewType` and `TypeAlias` (including the new `type` syntax) are slightly different! NewType creates a subtype that is not equivalent to its base type, whereas TypeAlias assigns an alternative name for an existing type.
+>
+> ```python
+> from typing import TypeAlias
+>
+> type NewInt = int
+> AliasInt: TypeAlias = int
+>
+> NewInt == int  # False, not equivalent
+> AliasInt == int  # True, equivalent
+> ```
+
 ### Additional Resources
 - [Blog on Python 3.12 Generics](https://arjancodes.com/blog/python-generics-syntax/)
 - [Python 3.12 Preview: Static Typing Improvements](https://realpython.com/python312-typing/)
@@ -417,7 +431,7 @@ def run_quack(obj: Quackable):
     obj.quack()
 
 run_quack(Duck())  # Works!
-run_quack(Dog())  # Fails during TYPE CHECKING (not runtime)
+run_quack(Dog())  # Fails during TYPE CHECKING (and runtime)
 ```
 
 In essence, Protocols check what your object ***can*** do, not what it ***is***. They simply state that as long as an object implements certain methods or behaviors, it qualifies, regardless of its actual type or inheritance.
@@ -481,12 +495,82 @@ def context():
     takedown()
 ```
 
-Overall, this is a much more concise and readable way of creating and using context managers in Python.
+The ***real power*** with `contextlib` comes from its exception handling and state management. For example, the same logic with this following function:
+
+```python
+@contextlib.contextmanager
+def handle_file(path: str):
+    try:
+        with open(path, 'w') as f:
+            f.write('Hello, world!')
+            yield f
+            f.write('Goodbye, world!')
+    except Exception as e:
+        raise CustomFileOpenError() from e
+```
+
+Using raw `__enter__` and `__exit__` methods would look like this:
+
+```python
+class handle_file:
+    def __init__(self, path: str):
+        self.path = path
+        self.file = None
+    
+    def __enter__(self):
+        try:
+            self.file = open(self.path, 'w')
+            self.file.write('Hello, world!')
+            return self.file
+        except Exception as e:
+            raise CustomFileOpenError() from e
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        try:
+            # Only write "Goodbye, world!" if no exception occurred during the yield
+            if exc_type is None:
+                self.file.write('Goodbye, world!')
+        finally:
+            if self.file:
+                self.file.close()
+        # Not suppressing any exceptions
+        return None
+```
+
+Both are functionally identical, but the `@contextmanager` decorator lets us write more readable and maintainable code by handling all the boilerplate for us.
+
+(No need to deal with `exec_type`, `exec_val`, `exec_tb`, etc!)
+
+> **✨ Bonus Tip:**
+>
+> `raise ... from ...` is also a neat Python feature that allows you to chain exceptions together!
+>
+> For example,
+>
+> ```python
+> try:
+>     raise ValueError()
+> except Exception as e:
+>     raise NameError() from e
+> ```
+> returns an exception like:
+> ```
+> Traceback (most recent call last):
+>   File "...", line ..., in ...
+> ValueError
+>
+> The above exception was the direct cause of the following exception:
+>
+> Traceback (most recent call last):
+>   File "...", line ..., in ...
+>   NameError
+> ```
 
 ### Additional Resources
 - [Context Managers and Python's with Statement](https://realpython.com/python-with-statement/)
 - [Python Tips: Context Manager](https://book.pythontips.com/en/latest/context_managers.html)
 - [Python Docs: `contextlib` — Utilities for with-statement contexts](https://docs.python.org/3/library/contextlib.html)
+- [PEP 3134 – Exception Chaining and Embedded Tracebacks](https://peps.python.org/pep-3134/)
 
 # 7. Structural Pattern Matching
 
@@ -550,7 +634,7 @@ match numbers:
     case [f, l]:
         return f"First: {f}, Last: {l}"
     case [f, *m, l]:
-        return f"First: {f}, Middle: {m}, Last: {l}"
+        return f"First: {f}, Middle: {', '.join(m)}, Last: {l}"
     case []:
         return "Empty list"
 ```
@@ -576,6 +660,8 @@ match packet:
     case _:  # Failure case where packet is invalid
         print("Invalid packet")
 ```
+
+> **NOTE:** This is not the cleanest example, but instead more of a demo to show how you can use match-case with other Python features to create more powerful patterns.
 
 ### Additional Resources
 - [Structural Pattern Matching in Python](https://realpython.com/structural-pattern-matching/)
@@ -656,10 +742,12 @@ If you ever need to check if a for loop completes without a break, **for-else st
 found_server = False  # Keep track of whether we found a server
 for server in servers:
     if server.check_availability():
+        logger.info(f"Found server: {server}")  # Adding some side-effects here
         primary_server = server
         found_server = True  # Set the flag to True
         break
 if not found_server:
+    logger.info("No server found. Using backup server.")
     # Use the backup server if no server was found
     primary_server = backup_server
 
@@ -670,10 +758,12 @@ deploy_application(primary_server)
 # ===== Write this instead =====
 for server in servers:
     if server.check_availability():
+        logger.info(f"Found server: {server}")  # Adding some side-effects here
         primary_server = server
         break
 else:
     # Use the backup server if no server was found
+    logger.info("No server found. Using backup server.")
     primary_server = backup_server
 
 # Continue execution with whatever server we found
@@ -688,7 +778,7 @@ If you need to define and evaluate a variable all in one expression, the **Walru
 
 ```python
 # ===== Don't write this =====
-response = get_user_input()
+response = pattern.search(line)
 if response:
     print('You pressed:', response)
 else:
@@ -696,7 +786,7 @@ else:
 ```
 ```python
 # ===== Write this instead =====
-if response := get_user_input():
+if response := pattern.search(line):
     print('You pressed:', response)
 else:
     print('You pressed nothing')
@@ -725,6 +815,17 @@ username, full_name, first_name = get_user_info()
 
 display_name = username or full_name or first_name or "Anonymous"
 ```
+
+> **NOTE:** As some readers have pointed out, there are some hidden footguns with evaluating variables as booleans!
+>
+> Empty strings, zeros, and empty lists are all considered "falsy" values, which means you need to be extra careful when checking explicitly for `None` or `0`.
+> ```python
+> # Zero is considered falsy, so it gets skipped even when it's a valid value
+> user_data = {"name": "Alice", "age": 0}
+> age = user_data.get("age") or "Unknown"
+> print(f"User age: {age}")  # "User age: Unknown"
+> ```
+
 
 ## 9.4 Operator Chaining
 
@@ -1214,3 +1315,9 @@ But if you are that 1% which has a unique enough problem that only metaclasses c
 If you've made it this far, shoot me a quick message as to which ones you've seen before and which ones you haven't! I'd love to hear from you.
 
 Happy Python-ing, y'all 🐍!
+
+> *Thank you to all the readers who pointed out and suggested improvements!*
+>
+> *If you notice any inaccuracies or have any feedback, please let me know!*
+>
+> *Contact: [blog@edward-li.com](mailto:blog@edward-li.com)*
