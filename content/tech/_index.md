@@ -4,5 +4,5 @@
   category = "tech"
   categoryIcon = "fa-gears"
   categoryTitle = "Tech Articles"
-  categoryDescription = "wasd."
+  categoryDescription = "Miscellaneous articles on science and technology that I find interesting."
 +++
