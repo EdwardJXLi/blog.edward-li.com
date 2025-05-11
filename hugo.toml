@@ -2,7 +2,18 @@ baseURL = 'https://blog.edward-li.com/'
 languageCode = 'en-us'
 title = "Edward Li's Blog"
 copyright = "Edward Li"
-theme = 'hydra'
+theme = 'hydra-devel'
+
+# RSS Configuration
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "index"
+  isPlainText = true
+  notAlternative = true
 
 [[menu.main]]
 name = "Blogs"
@@ -45,6 +56,7 @@ showAllPostsArchive = true
 showAllPostsOnHomePage = true
 enableBlogCategoryHeaders = true
 themeFooter = true
+rss = true
 
 plausibleDomain = "blog.edward-li.com"
 plausibleDataAPI = "https://a.dragondragondragon.xyz/api/event"
