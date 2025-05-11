@@ -28,12 +28,14 @@ weight = 4
 colortheme = "white"
 logo = "images/logo.png"
 description = """I'm Edward Li, a Computer Science and Physics student at the [University of British Columbia](https://www.ubc.ca)!
-Currently, I live in San Francisco building software agents at [Codegen](https://codegen.com/).
+
+Currently interning at [Google](https://www.google.com)/[GCP](https://cloud.google.com) as a Software Engineer. Previously, I worked full-time building software agents at [Codegen](https://codegen.com/)
+alongside internships at [HP](https://www.hp.com) & [Nokia](https://www.nokia.com).
 
 I also play CTFs with [MapleBacon](https://maplebacon.org) and [MMM](https://x.com/mmm_ctf_team),
-build rockets with [UBC Rocket](https://ubcrocket.com),
+build rockets with [UBC Rocket](https://www.ubcrocket.com),
 organize logistics for [nwPlus](https://nwplus.io),
-and foster communities at [Atelier](https://www.instagram.com/atelier.ubc/)/[Socratica](https://www.socratica.info).
+and foster communities at [Atelier](https://www.instagram.com/atelier.place/)/[Socratica](https://www.socratica.info).
 
 This blog serves as a collection of my thoughts, projects, and experiences over the years. Feel free to explore!"""
 mainSectionTitle = "Blog Posts"
