@@ -1,5 +1,6 @@
 ---
 title: Hello There!
+description: A `Hello World` from half way across the world!
 date: 2025-03-28
 keywords:
   - Introduction

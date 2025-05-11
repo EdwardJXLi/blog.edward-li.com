@@ -1,5 +1,6 @@
 ---
 title: 14 Advanced Python Features
+description: A collection of advanced Python features that I've found interesting, underrated, or unique - as someone who's seen a lot of Python code.
 date: 2025-04-14
 keywords:
 tags:
