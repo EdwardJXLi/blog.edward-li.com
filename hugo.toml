@@ -7,7 +7,7 @@ theme = 'hydra'
 # RSS Configuration
 [outputs]
   home = ["html", "rss"]
-  section = ["html", "rss"]
+  section = ["html"]
 
 [outputFormats.RSS]
   mediaType = "application/rss+xml"
@@ -61,6 +61,10 @@ rss = true
 plausibleDomain = "blog.edward-li.com"
 plausibleDataAPI = "https://a.dragondragondragon.xyz/api/event"
 plausibleURL = "https://a.dragondragondragon.xyz/main.js"
+
+[[params.social]]
+  name = "rss"
+  link = "/index.xml"
 
 [[params.social]]
   name = "github"
