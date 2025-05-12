@@ -7,7 +7,7 @@ keywords:
   - Introduction
 ---
 
-### Hello, Internet Traveller
+### Hello, Internet Traveler
 
 Welcome to my blog! I hope this space serves as a home for some of my projects, experiences, technical explorations, or simply random scattered thoughts that spark my interest. In a world where information is just a Google search or a ChatGPT query away, I believe it's important to slow down, relax, and create a corner of the internet where I can just chat about the stuff I find interesting.
 
