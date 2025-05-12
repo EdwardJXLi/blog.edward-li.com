@@ -63,10 +63,6 @@ plausibleDataAPI = "https://a.dragondragondragon.xyz/api/event"
 plausibleURL = "https://a.dragondragondragon.xyz/main.js"
 
 [[params.social]]
-  name = "rss"
-  link = "/index.xml"
-
-[[params.social]]
   name = "github"
   link = "https://github.com/edwardjxli"
 
