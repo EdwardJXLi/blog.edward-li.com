@@ -6,6 +6,7 @@
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
+{{- $pages = where $pages "Params.excludeFromRSS" "!=" true -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $pages | first $limit -}}
@@ -17,7 +18,7 @@
     <link>{{ .Permalink }}</link>
     <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Copyright }}
-    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <copyright>(c) {{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
@@ -33,7 +34,7 @@
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       {{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ if .Description }}{{ .Description | html }}{{ else }}{{ .Summary | html }}{{ end }}</description>
+      <description>{{ partial "rss-description.html" . | html }}</description>
     </item>
     {{ end }}
   </channel>

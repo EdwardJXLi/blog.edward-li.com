@@ -1,0 +1,10 @@
+{{ with .Description }}
+    {{ . }}
+{{ end }}
+{{ with .Section }}
+<p><strong>Category:</strong> {{ . }}</p>
+{{ end }}
+<p><a href="{{ $.Permalink }}">Read the full article here</a></p>
+<p>Having issues with the RSS feed? Please email <a href="mailto:blog@edward-li.com">blog@edward-li.com</a></p>
+<hr>
+{{ .Content }}
