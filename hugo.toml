@@ -38,15 +38,11 @@ weight = 4
 [params]
 colortheme = "white"
 logo = "images/logo.png"
-description = """I'm Edward Li, a Computer Science and Physics student at the [University of British Columbia](https://www.ubc.ca)!
+description = """I'm Edward Li, a Computer Science and Physics student at the [University of British Columbia](https://www.ubc.ca)! Currently interning at [Google](https://www.google.com)/[GCP](https://cloud.google.com) as a Software Engineer.
 
-Currently interning at [Google](https://www.google.com)/[GCP](https://cloud.google.com) as a Software Engineer. Previously, I worked full-time building software agents at [Codegen](https://codegen.com/)
-alongside internships at [HP](https://www.hp.com) & [Nokia](https://www.nokia.com).
+Previously, I worked at [Codegen](https://codegen.com/) building software agents and language servers, at [HP](https://www.hp.com) on high-performant remote work software, and at [Nokia](https://www.nokia.com) creating distributed testing frameworks for fiber optic systems.
 
-I also play CTFs with [MapleBacon](https://maplebacon.org) and [MMM](https://x.com/mmm_ctf_team),
-build rockets with [UBC Rocket](https://www.ubcrocket.com),
-organize logistics for [nwPlus](https://nwplus.io),
-and foster communities at [Atelier](https://www.instagram.com/atelier.place/)/[Socratica](https://www.socratica.info).
+I also play CTFs with [MapleBacon](https://maplebacon.org) and [MMM](https://x.com/mmm_ctf_team), build rockets with [UBC Rocket](https://www.ubcrocket.com), organize logistics for [nwPlus](https://nwplus.io), and foster communities at [Atelier](https://www.instagram.com/atelier.place/)/[Socratica](https://www.socratica.info).
 
 This blog serves as a collection of my thoughts, projects, and experiences over the years. Feel free to explore!"""
 mainSectionTitle = "Blog Posts"
