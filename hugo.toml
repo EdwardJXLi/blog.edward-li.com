@@ -4,6 +4,12 @@ title = "Edward Li's Blog"
 copyright = "Edward Li"
 theme = 'hydra'
 
+# Markdown Configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # RSS Configuration
 [outputs]
   home = ["html", "rss"]
