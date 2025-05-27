@@ -346,6 +346,8 @@ my_list.append("foo")
 
 pyrefly, mypy, and pyright all assume that `my_list.append("foo")` is a typing error, even though it is *technically* allowed (Python collections can have multiple types of objects!) If this is the intended behavior, ty is the only checker that implicitly allows this without requiring additional explicit typing on `my_list`.
 
+> **Quick Correction:** The ty team has mentioned that this is *not* an intended feature, and instead caused by incomplete inference of generic container literals. You can read more about it in this [HN thread](https://news.ycombinator.com/item?id=44108931).
+
 ## Generics
 
 Another thing the pyrefly team mentioned during their talk was that while redesigning pyrefly from the ground up, they focused on the "hard problems first". This means that a lot of the architecture around pyrefly was built around things like generics, overloads, and wildcard imports.
@@ -555,7 +557,7 @@ As mentioned multiple times, both pyrefly and ty are in early alpha. I strongly 
 
 **Go try these out for yourself now!**
 
-You can try out pyrefly over at **[pyrefly.org/sandbox](https://pyrefly.org/sandbox)**, and ty over at **[play.ty.dev](https://play.ty.dev)**. Both also have their respective `pip install` commands and plugins for your editor (VSCode, Cursor, etc).
+You can try out pyrefly over at **[pyrefly.org/sandbox](https://pyrefly.org/sandbox)**, and ty over at **[play.ty.dev](https://play.ty.dev)**. Both also have their respective `pip install`/`uv add`/`poetry add`/`uvx` commands and plugins for your editor (VSCode, Cursor, etc).
 
 In the meantime, I heard rumors that Google is planning on open-sourcing their own Go-based Python type checker, so it'll be very cool to check that out once it comes out 👀 ...
 
