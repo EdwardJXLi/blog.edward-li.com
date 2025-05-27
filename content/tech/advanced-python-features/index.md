@@ -391,9 +391,9 @@ type Vector = list[float]
 
 One of Python's major features (and also major complaints) is its support for [**Duck Typing**](https://realpython.com/duck-typing-python/). There's a saying that goes:
 
-{{< quote >}}
+<quote>
 "If it walks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck."
-{{</ quote >}}
+</quote>
 
 However, that raises the question: *How do you **type** duck typing?*
 
@@ -1294,9 +1294,9 @@ In your day-to-day development, 99% of your code won't ever hit a use case where
 
 That's why there is that one famous Python quote that goes:
 
-{{< quote >}}
+<quote>
 Metaclasses are deeper magic than 99% of users should ever worry about. If you wonder whether you need them, you don't. - Tim Peters
-{{</ quote >}}
+</quote>
 
 But if you are that 1% which has a unique enough problem that only metaclasses can solve, they are a powerful tool that lets you tinker with the internals of the Python object system.
 
