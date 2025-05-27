@@ -74,7 +74,7 @@ However, other than the fact that they are both fast Python type checkers, that'
 
 Speed seemed like one of the main focuses of Pyrefly, being mentioned multiple times during the intro presentation. According to the team, it's 35x faster than Pyre and 14x faster than Mypy/Pyright, with support of up to 1.8 million lines of code per second. Fast enough to "type check on every keystroke".
 
-In comparison, speed was also one of the main design goals for ty, but it felt like less of a focus during the introduction. The only claim was "1-2x faster than current generation type checkers". Naturally, I wanted to test performance out for myself.
+In comparison, speed was also one of the main design goals for ty, but it felt like less of a focus during the introduction. The only claim was "1-2 orders of magnitude faster than current generation type checkers". Naturally, I wanted to test performance out for myself.
 
 ## Benchmarking - PyTorch
 
