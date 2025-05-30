@@ -21,7 +21,7 @@ tags:
 
 > Note: I like using em-dashes while writing! Don't worry, this is not written by AI. <sup>[(context)](https://medium.com/@brentcsutoras/the-em-dash-dilemma-how-a-punctuation-mark-became-ais-stubborn-signature-684fbcc9f559)</sup> 
 
-Earlier this month, two new Rust-based Python type checkers hit the spotlight: [pyrefly](https://github.com/facebook/pyrefly) and [ty](https://github.com/astral-sh/ty). Although neither is *officially* released, they are a welcome change to the Python type checking world, historically dominated by [mypy](https://mypy-lang.org/) and [pylance](https://pypi.org/project/pylance/). 
+Earlier this month, two new Rust-based Python type checkers hit the spotlight: [pyrefly](https://github.com/facebook/pyrefly) and [ty](https://github.com/astral-sh/ty). Although neither is *officially* released, they are a welcome change to the Python type checking world, historically dominated by [mypy](https://mypy-lang.org/) and [pyright](https://github.com/microsoft/pyright). 
 
 While both are open-source and publicly downloadable for quite some time, there have not been any official announcements by Meta nor Astral on their brand new next-generation Python type checkers — **until last week**.
 
